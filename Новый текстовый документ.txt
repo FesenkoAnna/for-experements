@@ -1,0 +1,99 @@
+// #1 викторина
+
+alert("Мини викторина!");
+
+let answer1 = prompt(`Столица Норвегии: \nA) Тронхейм \nB) Осло \nC) Сундсвалль`);
+alert(`Ваш ответ: ${answer1}`);
+let answer2 = prompt(`Какая планета Солнечной системы самая горячая?: \nA) Меркурий \nB) Марс \nC) Венера`);
+alert(`Ваш ответ: ${answer2}`);
+let answer3 = prompt(`Какой элемент составляет около 78% атмосферы Земли?: \nA) Азот \nB) Водород \nC) Кислород`);
+alert(`Ваш ответ: ${answer3}`);
+let answer4 = prompt(`Какая страна имеет больше всего часовых поясов в мире (с учётом заморских территорий)?: \nA) Франция \nB) США \nC) Китай`);
+alert(`Ваш ответ: ${answer4}`);
+let answer5 = prompt(`Единственное млекопитающее, способное к настоящему и длительному полёту — это…: \nA) Летучая белка \nB) Шерстокрыл \nC) Летучая мышь`);
+alert(`Ваш ответ: ${answer5}`);
+
+
+alert(`Ваш ответ: Правельный ответ: \n ${answer1}        =       B Осло\n ${answer2}        =       C Венера\n ${answer3}        =      A Азот\n ${answer4}        =        A Франция\n ${answer5}        =         C Летучая мышь`);
+
+// #2 калькулятор
+
+while(true)
+{
+let a = prompt("Первое число: ");
+let b = prompt("Второе число: ");
+
+let operator = prompt("Действие с цифрами: прибавление(+), убавление(-), умножение(*), деление(/)");
+
+let result;
+
+switch(operator)
+{
+    case '+':
+        result = a + b;
+        break;
+    case '-':
+        result = a - b;
+        break;
+    case '*':
+        result = a * b;
+        break;
+    case '/':
+        if (b === 0) {
+            alert("Ошибка: деление на ноль!");
+        } else {
+            result = a / b;
+        }
+        break;
+    default:
+        alert("Ошибка: неизвестный оператор");
+        break;
+}
+
+if (result !== undefined)
+{
+    alert(`Результат: ${result}`);
+}
+
+let answer = prompt("Продолжить? да/нет");
+
+if (answer === "да")
+{
+    continue;
+}
+else
+{
+    break;
+}
+}
+
+//№3 палиндром
+
+while(true)
+{
+let originalText = prompt("Введите текст: ");
+
+let cleanText = originalText.toLowerCase().replaceAll(' ', '');
+
+let reversedText = cleanText.split('').reverse().join('');
+
+if (cleanText === reversedText)
+{
+    alert("Это палиндром.");
+}
+else
+{
+    alert("Это не палиндром.");
+}
+
+let answer = prompt("Продолжить? да/нет");
+
+if (answer === "да")
+{
+    continue;
+}
+else
+{
+    break;
+}
+}
