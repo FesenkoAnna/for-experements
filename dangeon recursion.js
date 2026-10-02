@@ -49,6 +49,15 @@ function chest() {
     }
 }
 
+const death = (a,b,c) => {
+    if (b === 10 && c > 0) {
+        alert(`Вы пережили босса и выбрались из подземелья!\nЗолото: ${a}`)
+    }
+    else {
+        alert(`Ваша жизнь на нуле! Вы проиграли!\nЗолото: ${a}\nСколько пройдено уровней: ${b}`)
+    }
+}
+
 //рекурсия
 
 function game(numberRoom){
@@ -57,19 +66,22 @@ function game(numberRoom){
     alert(`Ты:\n------------\nЗдоровье: ${health}/${MAX_HEALTH}\nЗолото: ${gold}`)
 
     let rnd = Math.random()
+
     if (rnd < 0.5) fight("Монстр", 5, 15)
     else if (rnd < 0.5) fountain()
     else if (rnd < 0.5) alert("В конмнате ничего не оказалось...")
     else chest()
 
     if (health <= 0) {
-        return alert(`Ваша жизнь на нуле! Вы проиграли!\nЗолото: ${gold}\nСколько пройдено уровней: ${numberRoom}`)
+        return death(gold, numberRoom, health)
     }
-    else if (numberRoom === 10) {
+    if (numberRoom === 10) {
         boss()
-        if (health <= 0) alert()
+        return death(gold,numberRoom,health)
     }
 
     numberRoom = numberRoom + 1
     game(numberRoom)
 }
+
+game()
