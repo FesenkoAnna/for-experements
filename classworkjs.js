@@ -200,56 +200,82 @@
 // }
 // console.log(sum(2,3))
 
-function pin_check (a) {
-    if (a !== "1234") {return false;}
-    else {return true;}
-}
 
-const money_check = (a) => alert(`Ваш баланс на данный момент составляет: ${a}`)
 
-function money_withdraw(a,b) {
-    if (a <= 0) {}
-    else if (b <= 0) {}
-    else if (a < b) {}
-    else {return a-b;}
-}
 
-function money_top_up(a,b) {
-    return a+b;
-}
 
-let money = 10000
-let right_pin = false
 
-for (let q = 3;q >=0;q--){
-    let pin_input = prompt("Введите свой пин-код: ")
-    let pin_out = pin_check(pin_input)
 
-    if (pin_out === true) {
-        right_pin = true
-        alert("Вы успешно зашли.")
-        break;
-    }
-    else {alert(`Неверный пин-код. У вас осталось ${q} попыток.`)}
-}
-if (right_pin === false){
-    alert("Доступ к банкомату отказано. Ваша карта заблокированна.")
-}
-else {
-    while (true) {
-        let opcion = prompt("Выберете действие:\n\nПросмотр баланса (1)\nСнятия средств (2)\nПополнить счет (3)\nВыход (4)")
 
-        if (opcion === '1') {money_check(money)}
-        else if (opcion === '2') {
-            let take_away_money = Number(prompt("Введите количество средств для снятие со счета: "))
-            money_withdraw(money,take_away_money)
-            alert(`Ваш счет состовляет: ${money} грн`)
-        }
-        else if (opcion === '3') {
-            let add_money = Number(prompt("Введите количество средств для пополнения счета: "))
-            money = money_top_up(money,add_money)
-            alert(`Ваш счет состовляет: ${money} грн`)
-        }
-        else if (opcion === '4') {break}
-    }
-}
+
+
+
+
+
+
+// function countDown(number)
+// {
+
+//     if(number === 0)
+//     {
+//         console.log("Start");
+//         return;
+
+//     }
+
+//     console.log(number);
+
+//     countDown(number-1)
+
+
+
+// }
+
+
+
+
+// countDown(10)
+
+
+
+// function sum(n)
+// {
+//     let result = 0
+
+//     for(let i = 1; i <= n ; i++)
+//     {
+//         result += i;
+//     }
+
+//     return result;
+
+// }
+
+// console.log(sum(5));
+
+
+
+// function sum(n)
+// {
+//     if(n === 1)
+//         return 1
+//
+//
+//     return n + sum(n-1)
+// }
+//
+//
+// console.log(sum(3));
+
+
+
+// function factorialNum(num,number,factNumber) {
+//     if (num === number) {
+//         return alert(factNumber);
+//     }
+//     factNumber = number * factNumber
+//     number = number + 1
+//     factorialNum(num,number,factNumber)
+// }
+//
+// factorialNum(6,1,6)
